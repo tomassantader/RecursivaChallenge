@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HoroscopeChallenge.Infrastructure.Repositories.Repositories
+namespace HoroscopeChallenge.Infrastructure.Repositories
 {
     public class HoroscopeCacheRepository : Repository<HoroscopeCache>, IHoroscopeCacheRepository
     {

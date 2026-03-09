@@ -5,7 +5,6 @@ using HoroscopeChallenge.Infrastructure.Persistence;
 using HoroscopeChallenge.Domain.Repositories;
 using HoroscopeChallenge.Infrastructure.Repositories;
 using HoroscopeChallenge.Domain.Interfaces;
-using HoroscopeChallenge.Infrastructure.Repositories.Repositories;
 
 namespace HoroscopeChallenge.Infrastructure.DependencyInjection;
 public static class ServiceCollectionExtensions

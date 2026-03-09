@@ -6,7 +6,7 @@ using HoroscopeChallenge.Application.Utils;
 using HoroscopeChallenge.Domain.Entities;
 using HoroscopeChallenge.Domain.Interfaces;
 using HoroscopeChallenge.Domain.Repositories;
-using HoroscopeChallenge.Infrastructure.Repositories.Repositories;
+using HoroscopeChallenge.Infrastructure.Repositories;
 using MediatR;
 using System.Net;
 

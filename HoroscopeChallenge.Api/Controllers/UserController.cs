@@ -16,6 +16,9 @@ public class UserController : ControllerBase
         _mediator = mediator;
     }
 
+    /// <summary>
+    /// Obtiene el perfil del usuario autenticado.
+    /// </summary>
     [HttpGet("profile")]
     public async Task<IActionResult> GetProfile()
     {
@@ -23,6 +26,9 @@ public class UserController : ControllerBase
         return Ok(response);
     }
 
+    /// <summary>
+    /// Actuliza email y fecha de nacimiento del usuario autenticado.
+    /// </summary>
     [HttpPut("profile")]
     public async Task<IActionResult> UpdateProfile(UpdateProfileCommand command)
     {

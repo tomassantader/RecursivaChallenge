@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HoroscopeChallenge.Application.Services.UserService
+{
+    public interface IUserService
+    {
+        int? UserId { get; }
+    }
+}

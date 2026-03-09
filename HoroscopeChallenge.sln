@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoroscopeChallenge.Application", "HoroscopeChallenge.Application\HoroscopeChallenge.Application.csproj", "{AF04B8E9-D422-459B-8CD8-C67111879253}"
+	ProjectSection(ProjectDependencies) = postProject
+		{336734CF-4CE1-4550-B367-629BD7FC0517} = {336734CF-4CE1-4550-B367-629BD7FC0517}
+		{79930A3B-4343-46E8-9BC3-2A8E4FF7B022} = {79930A3B-4343-46E8-9BC3-2A8E4FF7B022}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoroscopeChallenge.Infrastructure", "HoroscopeChallenge.Infrastructure\HoroscopeChallenge.Infrastructure.csproj", "{79930A3B-4343-46E8-9BC3-2A8E4FF7B022}"
+	ProjectSection(ProjectDependencies) = postProject
+		{336734CF-4CE1-4550-B367-629BD7FC0517} = {336734CF-4CE1-4550-B367-629BD7FC0517}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoroscopeChallenge.Domain", "HoroscopeChallenge.Domain\HoroscopeChallenge.Domain.csproj", "{336734CF-4CE1-4550-B367-629BD7FC0517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoroscopeChallenge.Api", "HoroscopeChallenge.Api\HoroscopeChallenge.Api.csproj", "{BEA99CB8-584C-41C1-9A02-E7A1EBC61DDB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{79930A3B-4343-46E8-9BC3-2A8E4FF7B022} = {79930A3B-4343-46E8-9BC3-2A8E4FF7B022}
+		{AF04B8E9-D422-459B-8CD8-C67111879253} = {AF04B8E9-D422-459B-8CD8-C67111879253}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF04B8E9-D422-459B-8CD8-C67111879253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF04B8E9-D422-459B-8CD8-C67111879253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF04B8E9-D422-459B-8CD8-C67111879253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF04B8E9-D422-459B-8CD8-C67111879253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79930A3B-4343-46E8-9BC3-2A8E4FF7B022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79930A3B-4343-46E8-9BC3-2A8E4FF7B022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79930A3B-4343-46E8-9BC3-2A8E4FF7B022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79930A3B-4343-46E8-9BC3-2A8E4FF7B022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336734CF-4CE1-4550-B367-629BD7FC0517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336734CF-4CE1-4550-B367-629BD7FC0517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336734CF-4CE1-4550-B367-629BD7FC0517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336734CF-4CE1-4550-B367-629BD7FC0517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA99CB8-584C-41C1-9A02-E7A1EBC61DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA99CB8-584C-41C1-9A02-E7A1EBC61DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA99CB8-584C-41C1-9A02-E7A1EBC61DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA99CB8-584C-41C1-9A02-E7A1EBC61DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9F22002-EA5D-4726-943A-E330C0AA0A05}
+	EndGlobalSection
+EndGlobal

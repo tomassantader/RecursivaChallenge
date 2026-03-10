@@ -11,7 +11,7 @@ public class HoroscopeService : IHoroscopeService
         _httpClient = httpClient;
     }
 
-    public async Task<HoroscopeResponse> GetHoroscopeAsync(string sign, DateTime date)
+    public async Task<HoroscopeResponse?> GetHoroscopeAsync(string sign, DateTime date)
     {
         var formattedDate = date.ToString("yyyy-MM-dd");
 

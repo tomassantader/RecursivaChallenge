@@ -22,7 +22,7 @@ public class GetHoroscopeStatsQueryHandler : IRequestHandler<GetHoroscopeStatsQu
         _horoscopeQueryRepository = horoscopeQueryRepository;
     }
 
-    public async Task<GetHoroscopeStatsResponse?> Handle(GetHoroscopeStatsQuery request,CancellationToken cancellationToken)
+    public async Task<GetHoroscopeStatsResponse> Handle(GetHoroscopeStatsQuery request,CancellationToken cancellationToken)
     {
         var history = await _horoscopeQueryRepository.GetHistoryAsync(cancellationToken);
 

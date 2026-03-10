@@ -3,9 +3,9 @@ using HoroscopeChallenge.Application.Services.UserService;
 
 namespace HoroscopeChallenge.Application.Queries.Horoscope
 {
-    public class GerHoroscopeQueryValidator : AbstractValidator<GetHoroscopeQuery>
+    public class GetHoroscopeQueryValidator : AbstractValidator<GetHoroscopeQuery>
     {
-        public GerHoroscopeQueryValidator(IUserService currentUser)
+        public GetHoroscopeQueryValidator(IUserService currentUser)
         {
             RuleFor(_ => currentUser.UserId)
                 .NotNull()

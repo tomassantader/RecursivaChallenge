@@ -32,9 +32,11 @@ public class GetHoroscopeQueryHandler : IRequestHandler<GetHoroscopeQuery, GetHo
         _horoscopeQueryRepository = horoscopeQueryRepository;
     }
 
-    public async Task<GetHoroscopeResponse?> Handle(GetHoroscopeQuery request, CancellationToken cancellationToken)
+    public async Task<GetHoroscopeResponse> Handle(GetHoroscopeQuery request, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetByIdAsync(_currentUser.UserId!.Value, cancellationToken);
+        
+        if (user == null) return new GetHoroscopeResponse { StatusCode = HttpStatusCode.NotFound };
 
         var sign = Helpers.GetSign(user.BirthDate);
         var today = DateTime.UtcNow.Date;

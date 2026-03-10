@@ -27,7 +27,7 @@ namespace HoroscopeChallenge.Infrastructure.Repositories.Base
 
         public async Task AddAsync(T entity, CancellationToken cancellationToken = default)
         {
-            _dbSet.AddAsync(entity);
+            _dbSet.Add(entity);
             await _context.SaveChangesAsync();
         }
 

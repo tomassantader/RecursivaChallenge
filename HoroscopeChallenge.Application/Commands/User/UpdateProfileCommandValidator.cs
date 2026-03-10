@@ -19,7 +19,7 @@ public class UpdateProfileCommandValidator : AbstractValidator<UpdateProfileComm
             .WithMessage("Email inválido");
 
         RuleFor(x => x.BirthDate)
-            .LessThan(DateTime.Today)
+            .LessThan(DateTime.UtcNow)
             .WithMessage("La fecha de nacimiento no puede ser futura");
     }
 }

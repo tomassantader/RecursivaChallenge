@@ -179,6 +179,26 @@ Se organiza en:
 
 ---
 
+- **`HoroscopeChallenge.Test`** → Contiene las **pruebas unitarias de la aplicación**, enfocadas en validar los casos de negocio más importantes.
+
+Se organiza en:
+
+- **LoginCommandHandlerTests** → Verifica el flujo de autenticación:
+  - Usuario inexistente devuelve `Unauthorized`.
+  - Password incorrecta devuelve `Unauthorized`.
+  - Credenciales válidas generan un `JWT token`.
+
+- **GetHoroscopeQueryHandlerTests** → Valida la lógica principal de obtención del horóscopo:
+  - Uso de **cache** cuando el horóscopo ya fue consultado.
+  - Llamada a la **API externa** cuando no existe cache.
+  - Manejo de respuesta `NotFound` cuando no se obtiene horóscopo.
+
+- **GetHoroscopeStatsQueryHandlerTests** → Verifica el cálculo de estadísticas:
+  - Obtención del **signo más buscado**.
+  - Construcción del **historial de consultas**.
+
+  ---
+
 ## Decisiones técnicas y por qué
 
 - **Separación por capas (API / Application / Domain / Infrastructure)**  

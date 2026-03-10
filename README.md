@@ -66,7 +66,7 @@ https://www.docker.com/products/docker-desktop
 Desde la raíz del proyecto ejecutar:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ## Acceso a la aplicación

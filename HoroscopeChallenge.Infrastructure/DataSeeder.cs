@@ -12,16 +12,30 @@ public static class DataSeeder
 
         var passwordHasher = new PasswordHasher<User>();
 
-        var user = new User
+        var users = new List<User>
         {
-            Username = "user",
-            Email = "user@test.com",
-            BirthDate = new DateTime(1995, 5, 10)
+            new User
+            {
+                Username = "user",
+                Email = "user@test.com",
+                BirthDate = new DateTime(1995,5,10),
+                PasswordHash = "123456"
+            },
+            new User
+            {
+                Username = "admin",
+                Email = "admin@test.com",
+                BirthDate = new DateTime(1990,8,22),
+                PasswordHash = "admin123"
+            }
         };
 
-        user.PasswordHash = passwordHasher.HashPassword(user, "123456");
+        foreach (var u in users)
+        {
+            u.PasswordHash = passwordHasher.HashPassword(u, u.PasswordHash);
+        }
 
-        db.Users.Add(user);
+        db.Users.AddRange(users);
         db.SaveChanges();
     }
 }

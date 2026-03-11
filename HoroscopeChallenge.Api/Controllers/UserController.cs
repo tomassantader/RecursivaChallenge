@@ -29,8 +29,8 @@ public class UserController : ControllerBase
     /// <summary>
     /// Actuliza email y fecha de nacimiento del usuario autenticado.
     /// </summary>
-    [HttpPut("profile")]
-    public async Task<IActionResult> UpdateProfile(UpdateProfileCommand command)
+    [HttpPatch("profile")]
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileCommand command)
     {
         var response = await _mediator.Send(command);
         return Ok(response);

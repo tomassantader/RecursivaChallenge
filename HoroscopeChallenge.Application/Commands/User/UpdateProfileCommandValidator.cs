@@ -10,16 +10,17 @@ public class UpdateProfileCommandValidator : AbstractValidator<UpdateProfileComm
     public UpdateProfileCommandValidator(IUserService currentUser)
     {
         RuleFor(_ => currentUser.UserId)
-        .NotNull()
-        .WithMessage("User must be authenticated.");
+            .NotNull()
+            .WithMessage("User must be authenticated.");
 
         RuleFor(x => x.Email)
-            .NotEmpty()
             .EmailAddress()
-            .WithMessage("Email inválido");
+            .WithMessage("Email inválido")
+            .When(x => x.Email != null);
 
         RuleFor(x => x.BirthDate)
             .LessThan(DateTime.UtcNow)
-            .WithMessage("La fecha de nacimiento no puede ser futura");
+            .WithMessage("La fecha de nacimiento no puede ser futura")
+            .When(x => x.BirthDate.HasValue);
     }
 }

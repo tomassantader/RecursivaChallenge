@@ -16,9 +16,9 @@ public class HoroscopeController : ControllerBase
     }
 
     /// <summary>
-    /// Obtiene el horosocopo del usuario autentificado segun su signo y la fecha actual.
+    /// Obtiene el horóscopo del día del usuario autenticado según su signo zodiacal.
     /// </summary>
-    [HttpGet("horoscope")]
+    [HttpGet]
     public async Task<IActionResult> GetHoroscope()
     {
         var result = await _mediator.Send(new GetHoroscopeQuery());
@@ -29,7 +29,7 @@ public class HoroscopeController : ControllerBase
     /// <summary>
     /// Obtiene historial de consultas y signo mas buscado.
     /// </summary>
-    [HttpGet("horoscopeStats")]
+    [HttpGet("stats")]
     public async Task<IActionResult> GetHoroscopeStats()
     {
         var result = await _mediator.Send(new GetHoroscopeStatsQuery());

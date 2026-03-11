@@ -18,7 +18,7 @@ public class UpdateProfileCommandHandler
         _currentUser = currentUser;
     }
 
-    public async Task<UpdateProfileResponse> Handle(UpdateProfileCommand request,CancellationToken cancellationToken)
+    public async Task<UpdateProfileResponse> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetByIdAsync(_currentUser.UserId!.Value, cancellationToken);
 
@@ -30,8 +30,11 @@ public class UpdateProfileCommandHandler
             };
         }
 
-        user.Email = request.Email;
-        user.BirthDate = request.BirthDate;
+        if (request.Email != null)
+            user.Email = request.Email;
+
+        if (request.BirthDate.HasValue)
+            user.BirthDate = request.BirthDate.Value;
 
         await _userRepository.Update(user);
 

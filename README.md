@@ -77,16 +77,14 @@ Una vez iniciados los contenedores puede ingresar a Swagger para realizar prueba
 http://localhost:5000/swagger
 
 
-### Usuario inicial (Seed)
+### Usuarios iniciales (Seed)
 
-Al iniciar la aplicación por primera vez, se crea automáticamente un usuario de prueba para facilitar el acceso a la API.
+Al iniciar la aplicación por primera vez, se crean automáticamente usuarios de prueba para facilitar el acceso a la API.
 
-**Credenciales**
-
-- **Username** user
-- **Password** 123456
-- **Email**  user@test.com
-- **BirthDate** 1995-05-10
+| Username | Password | Email | BirthDate |
+|----------|--------|-------------|---------------|
+| user | 123456 | user@test.com | 1995-05-10 |
+| admin | admin123 | admin@test.com | 1990-08-22 |
 
 ### Autenticación con JWT
 
@@ -120,10 +118,11 @@ Una vez autorizado, podrás acceder a los endpoints protegidos de la API.
 
 | Endpoint | Método | Descripción | Autenticación |
 |----------|--------|-------------|---------------|
+| `/api/auth/login` | POST | Autentica un usuario utilizando `username` y `password`. Si las credenciales son válidas, devuelve un token JWT que debe usarse para acceder a los endpoints protegidos. | Requerida |
 | `/api/user/profile` | GET | Obtiene el perfil del usuario autenticado | Requerida |
-| `/api/user/profile` | PUT | Permite actualizar los datos del perfil del usuario autenticado (email y fecha de nacimiento) | Requerida |
-| `/api/horoscope` | GET | Devuelve el horóscopo del día, el signo zodiacal del usuario y los días restantes para su próximo cumpleaños | Requerida |
-| `/api/horoscope/horoscopeStats` | GET | Devuelve estadísticas de consultas, incluyendo el historial de consultas y el signo más consultado | Requerida |
+| `/api/user/profile` | PATCH | Actualiza parcialmente el perfil del usuario autenticado. Permite modificar `email` y/o `birthDate`. Solo se actualizarán los campos enviados en el body. | Requerida |
+| `/api/horoscope` | GET | Devuelve el horóscopo del día del usuario autenticado, su signo zodiacal y los días restantes para su próximo cumpleaños. | Requerida |
+| `/api/horoscope/stats` | GET | Devuelve estadísticas de consultas de horóscopo, incluyendo el historial de consultas y el signo más consultado. | Requerida |
 
 ---
 
